@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+
+<mapper namespace="attractionInfo">
+	<resultMap type="attraction" id="attraction">
+		<result column="userIDName" property="userIDName" />
+		<result column="attractionName" property="attractionName" />
+		<result column="people" property="people" />
+		<result column="month" property="month" />
+		<result column="day" property="day" />
+	</resultMap>
+
+	<insert id="add" parameterType="user">
+		<![CDATA[
+			insert into attraction(userIDName, attractionName, people, month, day) values(#{userIDName}, #{attractionName}, #{people}, #{month}, #{day})
+		]]>
+	</insert>
+
+	<select id="byuserIDName" resultType="attraction"
+		parameterType="String">
+		<![CDATA[
+			select * from attraction where userIDName = #{userIDName}
+		]]>
+	</select>
+
+	<delete id="del" parameterType="attraction">
+		<![CDATA[
+			delete from attraction where  userIDName = #{userIDName} and attractionName = #{attractionName} and people = #{people} and month = #{month} and day = #{day}
+		]]>
+	</delete>
+
+</mapper>

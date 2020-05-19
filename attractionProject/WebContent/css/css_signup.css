@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+body {
+	background-color: rgb(242, 190, 28);
+}
+
+#logo {
+	padding: 20px 0px;
+}
+
+#logoImg {
+	width: 1000px;
+	height: 250px;
+	display: block;
+	margin: 0px auto;
+}
+
+#u {
+	text-align: center;
+}
+
+.menu {
+	clear: both;
+	overflow: hidden;
+	list-style: none;
+	text-transform: uppercase;
+	padding: 10px 30px 20px 30px;
+}
+
+.menu li {
+	display: inline;
+	letter-spacing: 7px;
+	padding: 8px 1px;
+	margin: 0px 50px;
+}
+
+.menu li a {
+	font-family: "arial", "serif";
+	text-align: center;
+	text-decoration: none;
+	color: rgb(240, 89, 10);
+	font-size: 23px;
+}
+
+.menu li:hover {
+	font-weight: bold;
+}
+
+.t {
+	font-family: "arial", "serif";
+	font-size: 18px;
+	margin: 0px auto;
+	border-spacing: 7px;
+	border-collapse: separate;
+}
+
+#finish {
+	float: right;
+}
+
+.button {
+	font-family: "arial", "serif";
+	font-size: 15px;
+	border: 1px solid;
+	background-color: rgba(0, 0, 0, 0);;
+}
+
+.button:hover {
+	font-weight: bold;
+}
+
+.textbox {
+	font-family: "arial", "serif";
+	background-color: transparent;
+	border-left-width: 0;
+	border-right-width: 0;
+	border-top-width: 0;
+	border-bottom-width: 1;
+	border-bottom-color: black;
+	font-size: 18px;
+}
+
+.textbox:focus {
+	outline: none;
+}

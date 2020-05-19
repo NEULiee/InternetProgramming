@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="boardInfo">
+	<resultMap type="board" id="board">
+		<result column="boardID" property="boardID" />
+		<result column="userIDName" property="userIDName" />
+		<result column="title" property="title" />
+		<result column="memo" property="memo" />
+	</resultMap>
+
+	<insert id="add" parameterType="board">
+		<![CDATA[
+			insert into board(userIDName, title, memo) values(#{userIDName}, #{title}, #{memo})
+		]]>
+	</insert>
+
+	<select id="all" resultType="board">
+		<![CDATA[
+			select * from board
+		]]>
+	</select>
+
+	<select id="byboardID" resultType="board"
+		parameterType="Integer">
+		<![CDATA[
+			select * from board where boardID = #{boardID}
+		]]>
+	</select>
+
+	<delete id="del" parameterType="Integer">
+		<![CDATA[
+			delete from board where  boardID = #{boardID}
+		]]>
+	</delete>
+
+	<select id="search" resultType="board" parameterType="String">
+		<![CDATA[
+			select * from board where title like concat('%', #{search}, '%')
+		]]>
+	</select>
+	
+	<update id="upd" parameterType="board">
+		<![CDATA[
+		update board set title=#{title}, memo=#{memo} where boardID=#{boardID};			
+		]]>
+	</update>
+
+</mapper>
